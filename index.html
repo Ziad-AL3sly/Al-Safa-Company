@@ -4971,6 +4971,413 @@
                 right: 10px;
             }
         }
+        /* ==================== */
+/* قسم عن الشركة - مضبوط على جميع الأجهزة */
+/* ==================== */
+.about-section {
+    padding: 5rem 5%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.about-content h3 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.about-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+    border-radius: 2px;
+}
+
+.about-content > p {
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+    color: var(--dark);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* المهمة والرؤية */
+.mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.mission-box,
+.vision-box {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--gold);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.mission-box:hover,
+.vision-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+.mission-box h4,
+.vision-box h4 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.mission-box h4 i,
+.vision-box h4 i {
+    color: var(--gold);
+    font-size: 1.4rem;
+}
+
+.mission-box p,
+.vision-box p {
+    color: var(--gray);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* لماذا تختار شركة الصفا */
+.why-choose-us {
+    margin: 3rem 0;
+}
+
+.why-choose-us h4 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.reason-item {
+    background: white;
+    padding: 1.8rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    border-right: 4px solid var(--gold);
+    text-align: right;
+}
+
+.reason-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+}
+
+.reason-item i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.reason-item h5 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.reason-item p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* الإحصائيات */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.about-stat {
+    text-align: center;
+    position: relative;
+}
+
+.about-stat .number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--gold);
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+}
+
+.about-stat .text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: block;
+}
+
+/* ==================== */
+/* التجاوب مع جميع الشاشات */
+/* ==================== */
+
+/* شاشات كبيرة جداً (4K) */
+@media (min-width: 2000px) {
+    .about-container {
+        max-width: 1600px;
+    }
+    
+    .about-stat .number {
+        font-size: 3.5rem;
+    }
+    
+    .about-stat .text {
+        font-size: 1.2rem;
+    }
+}
+
+/* شاشات لابتوب كبيرة (1200px - 1999px) */
+@media (max-width: 1999px) and (min-width: 1200px) {
+    .about-stat .number {
+        font-size: 2.8rem;
+    }
+}
+
+/* شاشات لابتوب متوسطة (992px - 1199px) */
+@media (max-width: 1199px) {
+    .about-stat .number {
+        font-size: 2.5rem;
+    }
+    
+    .reason-item {
+        padding: 1.5rem 1.2rem;
+    }
+}
+
+/* شاشات تابلت (768px - 991px) */
+@media (max-width: 991px) {
+    .about-section {
+        padding: 4rem 4%;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-stat .number {
+        font-size: 2.5rem;
+    }
+    
+    .mission-box h4,
+    .vision-box h4 {
+        font-size: 1.3rem;
+    }
+}
+
+/* شاشات موبايل كبيرة (576px - 767px) */
+@media (max-width: 767px) {
+    .about-section {
+        padding: 3rem 4%;
+    }
+    
+    .about-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content > p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .mission-box,
+    .vision-box {
+        padding: 1.5rem;
+    }
+    
+    .mission-box p,
+    .vision-box p {
+        font-size: 0.95rem;
+    }
+    
+    .why-choose-us h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .reasons-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .reason-item {
+        padding: 1.2rem;
+    }
+    
+    .reason-item i {
+        font-size: 1.8rem;
+    }
+    
+    .reason-item h5 {
+        font-size: 1.1rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .about-stat .number {
+        font-size: 2rem;
+    }
+    
+    .about-stat .text {
+        font-size: 0.9rem;
+    }
+}
+
+/* شاشات موبايل صغيرة (375px - 575px) */
+@media (max-width: 575px) {
+    .about-section {
+        padding: 2.5rem 3%;
+    }
+    
+    .about-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .about-content h3::after {
+        width: 70px;
+    }
+    
+    .mission-box,
+    .vision-box {
+        padding: 1.2rem;
+    }
+    
+    .mission-box h4,
+    .vision-box h4 {
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+    
+    .mission-box h4 i,
+    .vision-box h4 i {
+        font-size: 1.2rem;
+    }
+    
+    .why-choose-us h4 {
+        font-size: 1.4rem;
+    }
+    
+    .reason-item {
+        padding: 1rem;
+    }
+    
+    .reason-item i {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .reason-item h5 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .reason-item p {
+        font-size: 0.9rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.2rem;
+    }
+    
+    .about-stat .number {
+        font-size: 1.8rem;
+    }
+    
+    .about-stat .text {
+        font-size: 0.8rem;
+    }
+}
+
+/* شاشات موبايل صغيرة جداً (أقل من 374px) */
+@media (max-width: 374px) {
+    .about-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .about-stat .number {
+        font-size: 2rem;
+    }
+    
+    .about-stat .text {
+        font-size: 0.9rem;
+    }
+}
     </style>
 
 </head>
@@ -5017,7 +5424,7 @@
             <h1>نحقق احلامك العقارية</h1>
             <p>نساعدك في العثور على العقار المثالي الذي يلبي جميع تطلعاتك وأحلامك</p>
             <div class="hero-buttons">
-                <a href="price-categories.html" class="primary-btn" target="_blank">تصفح العقارات</a>
+                <a href="#properties" class="primary-btn" target="_blank">تصفح العقارات</a>
                 <a href="#contact" class="secondary-btn">تواصل معنا</a>
                 <!-- زر عايز ابيع عقار -->
                 <a href="https://wa.me/201090516145?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A8%D9%8A%D8%B9%20%D8%B9%D9%82%D8%A7%D8%B1%D9%8A%20%D9%88%D8%A3%D8%AD%D8%AA%D8%A7%D8%AC%20%D8%A5%D9%84%D9%89%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B7%D9%88%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%A5%D8%AC%D8%B1%D8%A7%D8%A1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D8%A9."
@@ -6079,95 +6486,96 @@
         </div>
     </section>
     <!-- About Company Section -->
-    <section class="about-section" id="about">
-        <div class="section-header">
-            <h2>عن شركة الصفا</h2>
-            <p>الريادة والتميز في عالم العقارات الفاخرة منذ أكثر من 15 عاماً</p>
-        </div>
+   <!-- About Company Section -->
+<section class="about-section" id="about">
+    <div class="section-header">
+        <h2>عن شركة الصفا</h2>
+        <p>الريادة والتميز في عالم العقارات الفاخرة منذ أكثر من 15 عاماً</p>
+    </div>
 
-        <div class="about-container">
-            <div class="about-content">
-                <h3>رؤيتنا ورسالتنا</h3>
-                <p>شركة الصفا هي شركة رائدة في مجال التسويق العقاري بجمهورية مصر، تأسست عام 2010 بمجموعة من الخبراء
-                    والمتخصصين في المجال العقاري. نحن نؤمن بأن المنزل ليس مجرد مكان للسكن، بل هو حلم وحياة.</p>
+    <div class="about-container">
+        <div class="about-content">
+            <h3>رؤيتنا ورسالتنا</h3>
+            <p>شركة الصفا هي شركة رائدة في مجال التسويق العقاري بجمهورية مصر، تأسست عام 2010 بمجموعة من الخبراء
+                والمتخصصين في المجال العقاري. نحن نؤمن بأن المنزل ليس مجرد مكان للسكن، بل هو حلم وحياة.</p>
 
-                <div class="mission-vision">
-                    <div class="mission-box">
-                        <h4><i class="fas fa-bullseye"></i> مهمتنا</h4>
-                        <p>توفير حلول عقارية مبتكرة تلبي تطلعات عملائنا وتحقق أقصى استفادة من استثماراتهم العقارية.</p>
-                    </div>
-
-                    <div class="vision-box">
-                        <h4><i class="fas fa-eye"></i> رؤيتنا</h4>
-                        <p>أن نكون الشركة الرائدة في مجال العقارات الفاخرة في مصر والشرق الأوسط.</p>
-                    </div>
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h4><i class="fas fa-bullseye"></i> مهمتنا</h4>
+                    <p>توفير حلول عقارية مبتكرة تلبي تطلعات عملائنا وتحقق أقصى استفادة من استثماراتهم العقارية.</p>
                 </div>
 
-                <div class="why-choose-us">
-                    <h4>لماذا تختار شركة الصفا؟</h4>
-                    <div class="reasons-grid">
-                        <div class="reason-item">
-                            <i class="fas fa-award"></i>
-                            <h5>خبرة 15 عاماً</h5>
-                            <p>خبرة طويلة في السوق العقاري المصري</p>
-                        </div>
-
-                        <div class="reason-item">
-                            <i class="fas fa-users"></i>
-                            <h5>فريق متخصص</h5>
-                            <p>فريق من الخبراء والمستشارين العقاريين</p>
-                        </div>
-
-                        <div class="reason-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h5>ضمان الجودة</h5>
-                            <p>نضمن جودة جميع العقارات المعروضة</p>
-                        </div>
-
-                        <div class="reason-item">
-                            <i class="fas fa-handshake"></i>
-                            <h5>شفافية تامة</h5>
-                            <p>معاملات واضحة وشروط متفق عليها</p>
-                        </div>
-
-                        <div class="reason-item">
-                            <i class="fas fa-headset"></i>
-                            <h5>دعم مستمر</h5>
-                            <p>دعم فني واستشاري قبل وبعد البيع</p>
-                        </div>
-
-                        <div class="reason-item">
-                            <i class="fas fa-star"></i>
-                            <h5>سمعة طيبة</h5>
-                            <p>سمعة ممتازة بين العملاء والشركاء</p>
-                        </div>
-                    </div>
+                <div class="vision-box">
+                    <h4><i class="fas fa-eye"></i> رؤيتنا</h4>
+                    <p>أن نكون الشركة الرائدة في مجال العقارات الفاخرة في مصر والشرق الأوسط.</p>
                 </div>
+            </div>
 
-                <div class="about-stats">
-                    <div class="about-stat">
-                        <span class="number">15+</span>
-                        <span class="text">سنة خبرة</span>
+            <div class="why-choose-us">
+                <h4>لماذا تختار شركة الصفا؟</h4>
+                <div class="reasons-grid">
+                    <div class="reason-item">
+                        <i class="fas fa-award"></i>
+                        <h5>خبرة 15 عاماً</h5>
+                        <p>خبرة طويلة في السوق العقاري المصري</p>
                     </div>
 
-                    <div class="about-stat">
-                        <span class="number">500+</span>
-                        <span class="text">عميل راضٍ</span>
+                    <div class="reason-item">
+                        <i class="fas fa-users"></i>
+                        <h5>فريق متخصص</h5>
+                        <p>فريق من الخبراء والمستشارين العقاريين</p>
                     </div>
 
-                    <div class="about-stat">
-                        <span class="number">1000+</span>
-                        <span class="text">عقار مباع</span>
+                    <div class="reason-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h5>ضمان الجودة</h5>
+                        <p>نضمن جودة جميع العقارات المعروضة</p>
                     </div>
 
-                    <div class="about-stat">
-                        <span class="number">98%</span>
-                        <span class="text">رضا العملاء</span>
+                    <div class="reason-item">
+                        <i class="fas fa-handshake"></i>
+                        <h5>شفافية تامة</h5>
+                        <p>معاملات واضحة وشروط متفق عليها</p>
+                    </div>
+
+                    <div class="reason-item">
+                        <i class="fas fa-headset"></i>
+                        <h5>دعم مستمر</h5>
+                        <p>دعم فني واستشاري قبل وبعد البيع</p>
+                    </div>
+
+                    <div class="reason-item">
+                        <i class="fas fa-star"></i>
+                        <h5>سمعة طيبة</h5>
+                        <p>سمعة ممتازة بين العملاء والشركاء</p>
                     </div>
                 </div>
             </div>
+
+            <div class="about-stats">
+                <div class="about-stat">
+                    <span class="number" data-target="15">15+</span>
+                    <span class="text">سنة خبرة</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="number" data-target="500">500+</span>
+                    <span class="text">عميل راضٍ</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="number" data-target="1000">1000+</span>
+                    <span class="text">عقار مباع</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="number" data-target="98">%98</span>
+                    <span class="text">رضا العملاء</span>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
