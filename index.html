@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>شركة الصفا | للتسويق العقاري والتشطيبات في حدائق الأهرام وأكتوبر</title>
+    <title>شركة الصفا | للتسويق العقاري والتشطيبات </title>
     <meta name="description"
         content="شركة الصفا للتسويق العقاري والتشطيبات في حدائق الأهرام وحدائق أكتوبر. نقدم أفضل العروض على الشقق، الفلل، والأراضي. استشارات قانونية وخدمات تشطيب بجودة عالية." />
     <meta name="author" content="شركة الصفا للتسويق العقاري" />
@@ -1348,7 +1348,7 @@
             background: #fff;
             width: min(95%, 800px);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.1rem;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
             z-index: 1;
             max-height: 90vh;
@@ -5452,8 +5452,8 @@
 
         /* زر واتساب الثابت - دائري بدون نص */
         .whatsapp-float-btn {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
             color: white;
             border-radius: 50%;
@@ -5518,6 +5518,221 @@
 
             .whatsapp-float-btn i {
                 font-size: 2.2rem;
+            }
+        }
+
+        /* ========================================== */
+        /* نظام المفضلات - المطابق للكود الخاص بك */
+        /* ========================================== */
+
+        /* شريط التحكم العلوي */
+        .favorites-control-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* زر عرض المفضلات */
+        .filter-fav-btn {
+            background: #ffa200;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .filter-fav-btn:hover {
+            background: #54514c;
+            transform: translateY(-2px);
+        }
+
+        .filter-fav-btn.active {
+            background: #ffa200;
+        }
+
+        /* عداد المفضلات */
+        .fav-count {
+            background: #0a2540;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .fav-count i {
+            color: #ff6b6b;
+        }
+
+        /* زر القلب على العقار */
+        .favorite-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            color: #ccc;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .favorite-btn:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+
+        .favorite-btn.active {
+            color: #ff4757;
+        }
+
+        /* رسالة عدم وجود مفضلات */
+        .no-favorites-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #f8f9fa;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 1px dashed #dee2e6;
+        }
+
+        .no-favorites-card i {
+            font-size: 4rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .no-favorites-card h3 {
+            font-size: 1.5rem;
+            color: #0a2540;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-favorites-card p {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+
+        .no-favorites-card .show-all-btn-fav {
+            background: #0a2540;
+            color: white;
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .no-favorites-card .show-all-btn-fav:hover {
+            background: #1a3a5f;
+            transform: translateY(-2px);
+        }
+
+        /* توست منبثق */
+        .fav-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0a2540;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* متجاوب */
+        @media (max-width: 768px) {
+            .favorites-control-bar {
+                padding: 0.8rem 1rem;
+            }
+
+            .filter-fav-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .fav-count {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .favorite-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+
+            .no-favorites-card {
+                padding: 2rem 1rem;
+            }
+
+            .no-favorites-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .favorites-control-bar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .filter-fav-btn {
+                width: 40%;
+                justify-content: center;
+            }
+
+            .fav-count {
+                width: 40%;
+                justify-content: center;
             }
         }
     </style>
@@ -5671,6 +5886,15 @@
             <h2>عقارات مميزة</h2>
             <p>اكتشف مجموعة مختارة من أرقى العقارات في جمهورية مصر</p>
         </div>
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 10px;">
+            <button class="filter-fav-btn" id="showFavBtn">
+                <i class="fas fa-heart"></i> عرض المفضلات
+            </button>
+            <div class="fav-count" id="favCount">
+                <i class="fas fa-heart"></i> المفضلات (0)
+            </div>
+        </div>
 
         <!-- رسالة عدم وجود نتائج - سيتم التحكم في ظهورها عبر JavaScript -->
         <div class="no-results-message" style="display: none;">
@@ -5711,6 +5935,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="1">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 2 -->
@@ -5740,6 +5967,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="2">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 3 -->
@@ -5766,6 +5996,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="3">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 4 -->
@@ -5792,6 +6025,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="4">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 5 -->
@@ -5818,6 +6054,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="5">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 6 -->
@@ -5845,6 +6084,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="6">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 7 -->
@@ -5872,6 +6114,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="7">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 8 -->
@@ -5899,6 +6144,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="8">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 9 -->
@@ -5926,6 +6174,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="9">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 10 -->
@@ -5953,6 +6204,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="10">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 11 -->
@@ -5980,6 +6234,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="11">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 12 -->
@@ -6006,6 +6263,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="12">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 13 -->
@@ -6032,6 +6292,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="13">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 14 -->
@@ -6058,6 +6321,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="14">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 15 -->
@@ -6084,6 +6350,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="15">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 16 -->
@@ -6110,6 +6379,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="16">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 17 -->
@@ -6136,6 +6408,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="17">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 18 -->
@@ -6162,6 +6437,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="18">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 19 -->
@@ -6188,6 +6466,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="19">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 20 -->
@@ -6214,6 +6495,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="20">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
             <!-- Property 21 -->
             <div class="property-card" data-id="21">
@@ -6239,6 +6523,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="21">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 22 -->
@@ -6265,6 +6552,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="22">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 23 -->
@@ -6291,6 +6581,9 @@
                         </button>
                     </div>
                 </div>
+                 <button class="favorite-btn" data-id="23">
+                    <i class="far fa-heart"></i>
+                </button>
             </div> -->
 
             <!-- Property 24 -->
@@ -6317,6 +6610,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="24">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 25 -->
@@ -6343,6 +6639,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="25">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 26 -->
@@ -6369,6 +6668,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="26">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 27 -->
@@ -6395,6 +6697,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="27">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 28 -->
@@ -6421,6 +6726,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="28">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 29 -->
@@ -6447,6 +6755,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="29">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
 
             <!-- Property 30 -->
@@ -6473,6 +6784,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="30">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
             <!-- Property 31 -->
             <div class="property-card" data-id="31">
@@ -6498,6 +6812,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="31">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
             <!-- Property 32 -->
             <div class="property-card" data-id="32">
@@ -6523,6 +6840,9 @@
                         </button>
                     </div>
                 </div>
+                <button class="favorite-btn" data-id="32">
+                    <i class="far fa-heart"></i>
+                </button>
             </div>
             <!-- Property 33 -->
             <!-- <div class="property-card" data-id="33">
@@ -6548,6 +6868,9 @@
                         </button>
                     </div>
                 </div>
+                  <button class="favorite-btn" data-id="30">
+                    <i class="far fa-heart"></i>
+                </button>
             </div> -->
         </div>
     </section>
@@ -8856,6 +9179,186 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+        // ========== نظام المفضلات ==========
+
+        // تحميل المفضلات
+        function getFavorites() {
+            let fav = localStorage.getItem('myFavorites');
+            return fav ? JSON.parse(fav) : [];
+        }
+
+        // حفظ المفضلات
+        function saveFavorites(fav) {
+            localStorage.setItem('myFavorites', JSON.stringify(fav));
+        }
+
+        // تحديث الأزرار والعداد
+        function updateFavUI() {
+            let fav = getFavorites();
+
+            // تحديث العداد
+            let countSpan = document.getElementById('favCount');
+            if (countSpan) {
+                countSpan.innerHTML = `<i class="fas fa-heart"></i> المفضلات (${fav.length})`;
+            }
+
+            // تحديث كل الأزرار
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                let id = parseInt(btn.getAttribute('data-id'));
+                if (fav.includes(id)) {
+                    btn.classList.add('active');
+                    btn.innerHTML = '<i class="fas fa-heart"></i>';
+                } else {
+                    btn.classList.remove('active');
+                    btn.innerHTML = '<i class="far fa-heart"></i>';
+                }
+            });
+        }
+
+        // إضافة أو إزالة من المفضلات
+        function toggleFav(propertyId, btnElement) {
+            let fav = getFavorites();
+            let index = fav.indexOf(propertyId);
+
+            if (index === -1) {
+                fav.push(propertyId);
+                showMessage('✅ تمت الإضافة إلى المفضلات');
+            } else {
+                fav.splice(index, 1);
+                showMessage('❌ تمت الإزالة من المفضلات');
+            }
+
+            saveFavorites(fav);
+            updateFavUI();
+
+            // لو احنا في وضع عرض المفضلات، نحدث العرض
+            if (window.showingFavOnly) {
+                showOnlyFavorites();
+            }
+        }
+
+        // عرض المفضلات فقط
+        function showOnlyFavorites() {
+            let fav = getFavorites();
+            let cards = document.querySelectorAll('.property-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let id = parseInt(card.getAttribute('data-id'));
+                if (fav.includes(id)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            window.showingFavOnly = true;
+
+            // رسالة لو مفيش مفضلات
+            let msgDiv = document.getElementById('noFavMsg');
+            if (!msgDiv) {
+                msgDiv = document.createElement('div');
+                msgDiv.id = 'noFavMsg';
+                msgDiv.style.cssText = 'text-align: center; padding: 50px; background: #f8f9fa; border-radius: 15px; margin-top: 20px;';
+                msgDiv.innerHTML = `
+            <i class="fas fa-heart-broken" style="font-size: 50px; color: #ff4444;"></i>
+            <h3 style="margin-top: 15px;">لا توجد عقارات مفضلة</h3>
+            <p>أضف عقاراتك المفضلة بالضغط على زر القلب ❤️</p>
+            <button onclick="showAllProperties()" style="background: #0a2540; color: white; border: none; padding: 20px 30px; border-radius: 10px; margin-top: 25px; cursor: pointer;">
+                عرض جميع العقارات
+            </button>
+        `;
+                document.querySelector('.properties-grid').after(msgDiv);
+            }
+
+            if (visibleCount === 0) {
+                msgDiv.style.display = 'block';
+                document.querySelector('.properties-grid').style.display = 'none';
+            } else {
+                msgDiv.style.display = 'none';
+                document.querySelector('.properties-grid').style.display = 'grid';
+            }
+        }
+
+        // عرض كل العقارات
+        function showAllProperties() {
+            document.querySelectorAll('.property-card').forEach(card => {
+                card.style.display = 'block';
+            });
+            let msgDiv = document.getElementById('noFavMsg');
+            if (msgDiv) msgDiv.style.display = 'none';
+            document.querySelector('.properties-grid').style.display = 'grid';
+            window.showingFavOnly = false;
+
+            // تغيير شكل الزر
+            let favBtn = document.getElementById('showFavBtn');
+            if (favBtn) favBtn.classList.remove('active');
+        }
+
+        // رسالة منبثقة
+        function showMessage(msg) {
+            let toast = document.createElement('div');
+            toast.innerHTML = msg;
+            toast.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background: #0a2540;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        z-index: 9999;
+        font-weight: bold;
+        animation: fadeInOut 3s;
+    `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // إضافة أنيميشن للرسالة
+        let style = document.createElement('style');
+        style.textContent = `
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateX(50px); }
+        15% { opacity: 1; transform: translateX(0); }
+        85% { opacity: 1; transform: translateX(0); }
+        100% { opacity: 0; transform: translateX(50px); }
+    }
+`;
+        document.head.appendChild(style);
+
+        // ربط الأزرار عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            // تحديث الواجهة
+            updateFavUI();
+
+            // ربط أزرار المفضلات
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    let id = parseInt(this.getAttribute('data-id'));
+                    toggleFav(id, this);
+                });
+            });
+
+            // ربط زر عرض المفضلات
+            let showFavBtn = document.getElementById('showFavBtn');
+            if (showFavBtn) {
+                showFavBtn.addEventListener('click', function () {
+                    if (window.showingFavOnly) {
+                        showAllProperties();
+                        this.classList.remove('active');
+                    } else {
+                        showOnlyFavorites();
+                        this.classList.add('active');
+                    }
+                });
+            }
+
+            // إضافة متغير لتتبع الحالة
+            window.showingFavOnly = false;
         });
     </script>
 </body>
