@@ -5405,6 +5405,121 @@
                 font-size: 0.9rem;
             }
         }
+
+        /* تنسيقات الأزرار الثابتة */
+        .fixed-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            right: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .fixed-buttons a {
+            pointer-events: auto;
+        }
+
+        .back-to-top {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* زر واتساب الثابت - دائري بدون نص */
+        .whatsapp-float-btn {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-float-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-float-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* تنسيق للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .fixed-buttons {
+                bottom: 1rem;
+                left: 1rem;
+                right: 1rem;
+            }
+
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            .whatsapp-float-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .whatsapp-float-btn i {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+
+            .whatsapp-float-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+
+            .whatsapp-float-btn i {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 
 </head>
@@ -7033,7 +7148,15 @@
             <div class="lightbox-counter" id="lightboxCounter">1 / 5</div>
         </div>
     </div>
-
+    <!-- Back to Top Buttons (زرين منفصلين) -->
+    <div class="fixed-buttons">
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        <a href="#" class="whatsapp-float-btn" id="whatsappFloatBtn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     <script>
         // بيانات العقارات مع معارض الصور
         const propertiesData = {
@@ -8700,6 +8823,40 @@
         window.performSearch = performSearch;
         window.resetSearch = resetSearch;
         window.showAllProperties = showAllProperties;
+        // دالة لفتح واتساب من الزر الثابت
+        function openWhatsappFloat() {
+            const phoneNumber = "201090516145";
+            const message = "السلام عليكم، أحتاج إلى مساعدة بخصوص العقارات.";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // ربط زر واتساب الثابت
+        const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
+        if (whatsappFloatBtn) {
+            whatsappFloatBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                openWhatsappFloat();
+            });
+        }
+
+        // زر العودة للأعلى (السهم) - يظل كما هو للتمرير للأعلى
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 
