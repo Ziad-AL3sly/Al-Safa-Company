@@ -2637,9 +2637,9 @@
                 font-size: 1rem;
             }
 
-            .feature {
+            /* .feature {
                 flex: 0 0 100%;
-            }
+            } */
 
             .section-header h2 {
                 font-size: 1.6rem;
@@ -3810,7 +3810,7 @@
 
         @media (max-width: 374px) {
             .property-buttons {
-                grid-template-columns: 1fr;
+                /* grid-template-columns: 1fr; */
                 gap: 0.5rem;
             }
 
@@ -7303,7 +7303,7 @@
                         aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://www.facebook.com/share/17ftsN15z4/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.facebook.com/share/17ftsN15z4/ " target="_blank" rel="noopener noreferrer"
                         aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
@@ -9912,7 +9912,23 @@
             // إضافة متغير لتتبع الحالة
             window.showingFavOnly = false;
         });
+        // كود التعديل: جعل الضغط على أي مكان في الكارد (ما عدا الأزرار) يفتح التفاصيل
+        document.querySelectorAll('.property-card').forEach(card => {
+            card.addEventListener('click', function (event) {
+                // منع فتح التفاصيل إذا كان المستخدم قد نقر على زر واتساب أو اتصال أو زر القلب (المفضلة)
+                if (event.target.closest('.whatsapp-btn-card') ||
+                    event.target.closest('.call-btn-card') ||
+                    event.target.closest('.favorite-btn')) {
+                    return;
+                }
 
+                // العثور على زر التفاصيل داخل هذا الكارد والنقر عليه
+                const detailsBtn = this.querySelector('.details-btn');
+                if (detailsBtn) {
+                    detailsBtn.click();
+                }
+            });
+        });
     </script>
 </body>
 
